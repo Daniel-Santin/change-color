@@ -1,16 +1,17 @@
-let button = document.getElementsById("b1");
+let button = document.querySelectorAll("button");
 
 function NumeroAleatorio(){
-    return Math.floor(Math.random()*(255-1)+1)
-}
-function TrocarCor(){
-    var x1 = NumeroAleatorio();
-    var x2 = NumeroAleatorio();
-    var x3 = NumeroAleatorio();
-    button.addEventListener("click", TrocarCor);
-    var cor = "rgb("+x1+","+x2+","+x3+")";
-    document.body.style.backgroundColor = cor;
+    return Math.floor(Math.random() * 255);
 }
 
+function TrocarCor(){ 
+    let x1 = NumeroAleatorio();
+    let x2 = NumeroAleatorio();
+    let x3 = NumeroAleatorio();
+    var cor = "rgb("+x1+", "+x2+", "+x3+");";
+    button.textcontent = "";
+    button.addEventListener("click", TrocarCor);
+    document.body.style.backgroundColor = cor;
+}
 
 TrocarCor();
